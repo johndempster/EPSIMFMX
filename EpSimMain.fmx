@@ -31,7 +31,7 @@ object MainFrm: TMainFrm
       Size.Height = 656.000000000000000000
       Size.PlatformDefault = False
       TabIndex = 0
-      TabOrder = 0
+      TabOrder = 1
       TabPosition = PlatformDefault
       Sizes = (
         841s
@@ -2519,7 +2519,7 @@ object MainFrm: TMainFrm
       Size.Width = 265.000000000000000000
       Size.Height = 47.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 1
+      TabOrder = 2
       object bNewExperiment: TButton
         Anchors = [akLeft, akTop, akRight]
         Position.X = 8.000000000000000000
@@ -2528,7 +2528,7 @@ object MainFrm: TMainFrm
         Size.Width = 249.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 0
+        TabOrder = 1
         Text = 'New Experiment'
         TextSettings.Trimming = None
         OnClick = bNewExperimentClick
@@ -2542,7 +2542,7 @@ object MainFrm: TMainFrm
       Size.Height = 119.000000000000000000
       Size.PlatformDefault = False
       Text = ' Stimulus '
-      TabOrder = 2
+      TabOrder = 3
       object bStimulusOn: TButton
         Hint = 'Stimulate nerve by injecting current pulse'
         Position.X = 8.000000000000000000
@@ -2550,7 +2550,7 @@ object MainFrm: TMainFrm
         Size.Width = 169.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 1
+        TabOrder = 2
         Text = 'Stimulus On'
         TextSettings.Trimming = None
         ParentShowHint = False
@@ -2560,7 +2560,7 @@ object MainFrm: TMainFrm
       object edStimulusDuration: TSESNumberBox
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         StyleLookup = 'SESNumberBoxstyle'
-        TabOrder = 9
+        TabOrder = 10
         OnKeyUp = edStimulusDurationKeyUp
         Hint = 'Stimulus duration (ms)'
         Position.X = 89.000000000000000000
@@ -2580,7 +2580,7 @@ object MainFrm: TMainFrm
       object edStimulusCurrent: TSESNumberBox
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         StyleLookup = 'SESNumberBoxstyle'
-        TabOrder = 7
+        TabOrder = 8
         OnKeyUp = edStimulusCurrentKeyUp
         Hint = 'Stimulus current amplitude (pA)'
         Position.X = 8.000000000000000000
@@ -2604,7 +2604,7 @@ object MainFrm: TMainFrm
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Amplitude'
-        TabOrder = 4
+        TabOrder = 5
       end
       object lbStimDuration: TLabel
         Position.X = 89.000000000000000000
@@ -2613,7 +2613,7 @@ object MainFrm: TMainFrm
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Duration'
-        TabOrder = 3
+        TabOrder = 4
       end
       object bStimulusOff: TButton
         Hint = 'TurnsStimulus off'
@@ -2622,7 +2622,7 @@ object MainFrm: TMainFrm
         Size.Width = 64.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 0
+        TabOrder = 1
         Text = 'Off'
         TextSettings.Trimming = None
         ParentShowHint = False
@@ -2632,7 +2632,7 @@ object MainFrm: TMainFrm
       object edStimulusRate: TSESNumberBox
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         StyleLookup = 'SESNumberBoxstyle'
-        TabOrder = 8
+        TabOrder = 9
         OnKeyUp = edStimulusRateKeyUp
         Hint = 'Stimulus Rate (Hz)'
         Position.X = 174.000000000000000000
@@ -2656,7 +2656,7 @@ object MainFrm: TMainFrm
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Rate'
-        TabOrder = 2
+        TabOrder = 3
       end
     end
     object DrugsTab: TTabControl
@@ -2667,7 +2667,7 @@ object MainFrm: TMainFrm
       Size.Height = 200.000000000000000000
       Size.PlatformDefault = False
       TabIndex = 0
-      TabOrder = 4
+      TabOrder = 5
       TabPosition = PlatformDefault
       Sizes = (
         265s
@@ -2765,7 +2765,7 @@ object MainFrm: TMainFrm
       Size.Height = 111.000000000000000000
       Size.PlatformDefault = False
       TabIndex = 0
-      TabOrder = 3
+      TabOrder = 4
       TabPosition = PlatformDefault
       Sizes = (
         265s
@@ -2822,7 +2822,7 @@ object MainFrm: TMainFrm
       Size.Height = 87.000000000000000000
       Size.PlatformDefault = False
       Text = ' Condition '
-      TabOrder = 0
+      TabOrder = 1
       object rbEpilepsy: TRadioButton
         StyledSettings = [Family, Style, FontColor]
         Hint = 'Repeat stimulus at intervals defined by Rate'
@@ -2831,7 +2831,7 @@ object MainFrm: TMainFrm
         Size.Width = 158.000000000000000000
         Size.Height = 25.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 1
+        TabOrder = 2
         Text = 'Epileptic Seizure'
         TextSettings.Font.Size = 16.000000000000000000
         TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -2847,7 +2847,7 @@ object MainFrm: TMainFrm
         Size.Width = 121.000000000000000000
         Size.Height = 25.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 0
+        TabOrder = 1
         Text = 'Normal'
         TextSettings.Font.Size = 16.000000000000000000
         TextSettings.Font.StyleExt = {00070000000000000004000000}

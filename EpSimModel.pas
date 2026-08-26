@@ -342,8 +342,6 @@ begin
      Cl.Cout := 110.0 ;
      Cl.Cin := 4.0 ;
 
-
-
 end ;
 
 
@@ -517,8 +515,11 @@ begin
 
        // Normal excitatory transmitter release from randomly occurring EPSPs in the absence of epileptic fit
        ExcitatoryTransmitterRelease := ((Ca.FinalCout/(Ca.FinalCout + 0.01))){*GCaHVA_Available} ;
+
        // If resting membrane potential more negative that -83 mV then spontaneous AP activity within netwok of neurons in brain slice is inhibited.
-       if Vm < -83.0 then ExcitatoryTransmitterRelease := 0.0 ;
+       // Currently disabled so students can see excitatory post-synaptic potentials.
+       // if Vm < -83.0 then ExcitatoryTransmitterRelease := 0.0 ;
+
        if Random < 0.00005 then GlutR := GlutR + ExcitatoryTransmitterRelease*0.8 ;
 
        // Transmitter release kinetics

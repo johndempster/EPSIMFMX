@@ -10,6 +10,7 @@ unit EpSimMain;
 // 26.07.24 V2.0.0 FMX Multi-platform version
 // 13.08.26 V2.0.1 FMX Multi-platform version completed
 //                 Current stimulation option added
+// 26.08.26        scDisplay.BestPrinterCalibrationBars now used to set clipboard/printer calibration bars.
 
 interface
 
@@ -610,8 +611,7 @@ begin
     end;
 
 
-procedure TMainFrm.UpdateDisplay(
-              var States : Array of Single  ) ;
+procedure TMainFrm.UpdateDisplay( var States : Array of Single  ) ;
 // -------------------
 // Update chart display
 // -------------------
@@ -619,7 +619,11 @@ var
     ch,i : Integer ;
 begin
 
-    if NumPointsInBuf >= MaxPoints then Exit ;
+    if NumPointsInBuf >= MaxPoints then
+       begin
+       StopSimulation ;
+       Exit ;
+       end;
 
     i := NumPointsInBuf*MaxChannels ;
     for ch := 0 to MaxChannels-1 do
@@ -933,12 +937,7 @@ procedure TMainFrm.bStopClick(Sender: TObject);
 // ----------------
 begin
 
-     bRecord.Enabled := True ;
-     bStop.Enabled := False ;
-     sbDisplay.Enabled := True ;
-     bNewExperiment.Enabled := True ;
-     bStimulusOn.Enabled := False ;
-     UpdateDisplayWindow ;
+     StopSimulation ;
 
      end;
 
@@ -968,11 +967,13 @@ procedure TMainFrm.StopSimulation ;
 // Stop simulation
 // ----------------
 begin
+
      bRecord.Enabled := True ;
      bStop.Enabled := False ;
      sbDisplay.Enabled := True ;
      bNewExperiment.Enabled := True ;
-     bStimulusOn.Enabled := True ;
+     bStimulusOn.Enabled := False ;
+     UpdateDisplayWindow ;
 
      end;
 
@@ -1201,17 +1202,11 @@ procedure TMainFrm.mnCopyImageClick(Sender: TObject);
 // -----------------------------
 // Copy image to clipboard
 // -----------------------------
-var
-    ch : Integer ;
 begin
 
-    scDisplay.TCalBar := (scDisplay.XMax - scDisplay.XMin)*scDisplay.TScale*0.1 ;
-    for ch := 0 to scdisplay.NumChannels-1 do
-        begin
-        scDisplay.ChanCalBar[ch] := (scDisplay.YMax[ch] - scDisplay.YMin[ch])*scDisplay.ChanScale[ch]*0.1 ;
-        end;
-
+    scDisplay.BestPrinterCalibrationBars(0.1) ;
     scDisplay.CopyImageToClipBoard ;
+
     end;
 
 
@@ -1276,16 +1271,9 @@ procedure TMainFrm.mnPrintClick(Sender: TObject);
 // ---------------------
 // Print displayed trace
 // ---------------------
-var
-    ch : Integer ;
 begin
 
-    scDisplay.TCalBar := (scDisplay.XMax - scDisplay.XMin)*scDisplay.TScale*0.1 ;
-    for ch := 0 to scdisplay.NumChannels-1 do
-        begin
-        scDisplay.ChanCalBar[ch] := (scDisplay.YMax[ch] - scDisplay.YMin[ch])*scDisplay.ChanScale[ch]*0.1 ;
-        end;
-
+    scDisplay.BestPrinterCalibrationBars(0.1) ;
     scDisplay.Print ;
 
 end;
@@ -1316,7 +1304,7 @@ procedure TMainFrm.mnWebHelpClick(Sender: TObject);
 var
   URL: string;
 begin
-  URL := 'https://github.com/johndempster/NerveSimFMX/wiki';
+  URL := 'https://github.com/johndempster/EPSimFMX/wiki';
 {$IFDEF MSWINDOWS}
   URL := StringReplace(URL, '"', '%22', [rfReplaceAll]);
   ShellExecute(0, 'open', PChar(URL), nil, nil, SW_SHOWNORMAL);
