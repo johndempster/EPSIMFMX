@@ -1,8 +1,8 @@
 unit EpSimMain;
-// -----------------------------------------------
-// Nerve Cell Simulation
-// (c) J. Dempster, University of Strathclyde 2006
-// -----------------------------------------------
+// ---------------------------------------------------
+// Brin Slice Eplilepsy Simulation
+// (c) J. Dempster, University of Strathclyde 2006-2026
+// ----------------------------------------------------
 // 26/02/06 V1.0
 // 12/08/08 V1.1 Lignocaine name changed to Lidocaine
 // 08/10/14 V1.2.1 Help file copied to local temp folder to allow opening when run from network folder
@@ -11,6 +11,7 @@ unit EpSimMain;
 // 13.08.26 V2.0.1 FMX Multi-platform version completed
 //                 Current stimulation option added
 // 26.08.26        scDisplay.BestPrinterCalibrationBars now used to set clipboard/printer calibration bars.
+// 04.09.26 V2.0.1 Both MacOS and Windows versions complete
 
 interface
 
