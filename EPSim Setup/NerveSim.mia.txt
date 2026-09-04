@@ -219,9 +219,9 @@ else
   [OFFLINE CONTENT]
   Create Shortcut $SHORTCUTFOLDER$\EPSim to $TARGETDIR$\EPSim.exe
   Create Shortcut $DESKTOPDIR$\EPSim to $TARGETDIR$\EPSim.exe
-  Install Files C:\Users\John\Documents\Embarcadero\Studio\Projects\EPSim\EPSIM.chm to $TARGETDIR$
-  Install Files C:\Users\John\Documents\Embarcadero\Studio\Projects\EPSim\EPSim.exe to $TARGETDIR$
-  Install Files C:\Users\John\Documents\Embarcadero\Studio\Projects\EPSim\EPSIM User Guide.pdf to $TARGETDIR$
+  Install Files C:\Users\John\Documents\Embarcadero\Studio\Projects\EPSimFMX\EPSim Help\EPSIM.chm to $TARGETDIR$
+  Install Files C:\Users\John\Documents\Embarcadero\Studio\Projects\EPSimFMX\Win32\Debug\EpSim.exe to $TARGETDIR$
+  Install Files C:\Users\John\Documents\Embarcadero\Studio\Projects\EPSimFMX\EPSIM User Guide.pdf to $TARGETDIR$
   [DEFINE WEB MEDIA NerveSim]
   Get Component NerveSim Selection State into Variable SELECTED
   if Variable SELECTED Equals TRUE
